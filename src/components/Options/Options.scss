@@ -1,11 +1,11 @@
-@import 'style/variables.scss';
+@use '../../style/variables.scss';
 
 .options-container {
   display: grid;
 
   > * {
-    margin-bottom: $base-spacing;
-    padding: 0 $base-spacing;
+    margin-bottom: variables.$base-spacing;
+    padding: 0 variables.$base-spacing;
 
     .option-label {
       box-sizing: border-box;
@@ -60,7 +60,7 @@
   }
 
   @include breakpoint(tabletMax) {
-    grid-template-columns: 1fr $base-spacing*4 1fr;
+    grid-template-columns: 1fr variables.$base-spacing * 4 1fr;
 
     > :nth-child(2n + 1) {
       grid-column: 1;

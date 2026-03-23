@@ -1,10 +1,12 @@
+@use '../../style/variables.scss';
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400');
-@import 'style/variables.scss';
+
 
 body {
-  background: $ui-background;
-  color: $ui-color;
+  background: variables.$ui-background;
+  color: variables.$ui-color;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
@@ -15,20 +17,20 @@ body {
 }
 
 .app-container {
-  max-width: $content-max-width;
+  max-width: variables.$content-max-width;
   margin: 0 auto;
   box-sizing: border-box;
-  
-  @include breakpoint(mobile) {
-    padding: $padding-mobile-y $padding-mobile-x;
+
+  @include variables.breakpoint(mobile) {
+    padding: variables.$padding-mobile-y variables.$padding-mobile-x;
   }
 
-  @include breakpoint(tablet) {
-    padding: $padding-tablet-y $padding-tablet-x;
+  @include variables.breakpoint(tablet) {
+    padding: variables.$padding-tablet-y variables.$padding-tablet-x;
   }
 
-  @include breakpoint(desktop) {
-    padding: $padding-desktop-y $padding-desktop-x;
+  @include variables.breakpoint(desktop) {
+    padding: variables.$padding-desktop-y variables.$padding-desktop-x;
   }
 }
 
@@ -57,12 +59,12 @@ body {
 
 h1 {
   font-weight: 300;
-  margin: 0 $base-spacing $base-spacing*2 $base-spacing;
+  margin: 0 variables.$base-spacing variables.$base-spacing * 2 variables.$base-spacing;
   font-size: 2rem;
 }
 
 h2 {
   font-weight: 300;
-  margin: 0 $base-spacing $base-spacing*2 $base-spacing;
+  margin: 0 variables.$base-spacing variables.$base-spacing * 2 variables.$base-spacing;
   font-size: 1.5rem;
 }

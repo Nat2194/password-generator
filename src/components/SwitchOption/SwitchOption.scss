@@ -1,11 +1,11 @@
-@import 'style/variables.scss';
+@use '../../style/variables.scss';
 
 .switch-option {
-  margin-bottom: $base-spacing*2;
+  margin-bottom: variables.$base-spacing * 2;
 
   .option-label {
     .option-value {
-      margin: -$base-spacing*1.5 0;
+      margin: variables.$base-spacing * -1.5 0;
     }
   }
 }
