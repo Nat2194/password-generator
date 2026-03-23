@@ -33,8 +33,8 @@ export default class App extends Component {
     this.state = {
       options: {
         passwordLength: 32,
-        minDigitProportion: 0.0,
-        minSymbolProportion: 0.0,
+        minDigitProportion: 10.0,
+        minSymbolProportion: 10.0,
         maxCaseVariance: 1.0,
         useLowercase: true,
         useUppercase: true,
@@ -68,16 +68,17 @@ export default class App extends Component {
         hasValidSymbols && i < newOptions.symbols.length;
         i += 1
       ) {
-        hasValidSymbols = hasValidSymbols
-          && classifyCharacter(newOptions.symbols.charCodeAt(i)) === 'symbol';
+        hasValidSymbols =
+          hasValidSymbols &&
+          classifyCharacter(newOptions.symbols.charCodeAt(i)) === 'symbol';
       }
       if (
-        (newOptions.useUppercase
-          || newOptions.useLowercase
-          || newOptions.useDigits
-          || (newOptions.useSymbols && newOptions.symbols.length > 1))
-        && hasValidSymbols
-        && newOptions.symbols.length > 0
+        (newOptions.useUppercase ||
+          newOptions.useLowercase ||
+          newOptions.useDigits ||
+          (newOptions.useSymbols && newOptions.symbols.length > 1)) &&
+        hasValidSymbols &&
+        newOptions.symbols.length > 0
       ) {
         return {
           options: newOptions,
