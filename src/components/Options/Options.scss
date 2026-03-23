@@ -19,10 +19,10 @@
   }
 
   // All these :nth-child() rules are needed to make the grid work in IE 11
-  @include breakpoint(mobile) {
+  @include variables.breakpoint(mobile) {
     grid-template-columns: 1fr;
 
-    > {
+    > * {
       grid-column: 1;
     }
 
@@ -59,7 +59,7 @@
     }
   }
 
-  @include breakpoint(tabletMax) {
+  @include variables.breakpoint(tabletMax) {
     grid-template-columns: 1fr variables.$base-spacing * 4 1fr;
 
     > :nth-child(2n + 1) {
